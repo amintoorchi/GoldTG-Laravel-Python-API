@@ -9,5 +9,5 @@ Route::get('/', function () {
     ], 403);
 });
 
-Route::post('/price/store', [PriceController::class ,'store']);
-Route::get('price/show', [PriceController::class, 'show']);
+Route::post('/price/store', [PriceController::class ,'store'])->name('store');
+Route::get('price/show', [PriceController::class, 'show'])->name('show');

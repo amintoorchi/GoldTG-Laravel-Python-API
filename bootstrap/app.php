@@ -11,7 +11,10 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        $middleware->validateCsrfTokens(except: [
+            'price/show', // مسیر URL مربوط به روت 'show'
+            'price/store', // مسیر URL مربوط به روت 'store'
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
