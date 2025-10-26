@@ -12,7 +12,7 @@ payload = {
 
 r = requests.post(api_url, json=payload)
 
-if r.status_code == 200:
+if r.status_code in [200, 201]:
     print("Price sent successfully!")
 else:
-    print("Failed to send price. Status code:", r.status_code)
+    print("Failed to send price:", r.status_code, r.text)
