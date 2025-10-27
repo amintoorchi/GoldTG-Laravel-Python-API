@@ -1,6 +1,6 @@
 import requests
 
-url = "https://tabangohar.com/GheymatKhan/prices_in_table.html"
+url = "https://tg"
 response = requests.get(url)
 data = response.json()
 price = data["c"]
